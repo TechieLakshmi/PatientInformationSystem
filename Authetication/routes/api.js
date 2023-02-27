@@ -66,7 +66,6 @@ async function registerUser(req) {
     }
 }
 
-
 function hash(password) {
     return bcrypt.hashSync(password, 10)
 }
