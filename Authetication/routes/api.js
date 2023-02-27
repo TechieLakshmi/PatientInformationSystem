@@ -89,7 +89,7 @@ async function authenticate(req, res, next) {
     }
   
     // Check the user's credentials and generate a token
-    const user = { email: email, password: password };
+    const user = { email: email, password: password, 'designation':account.designation };
     const token = generateToken(user);
   
     // Return the token
