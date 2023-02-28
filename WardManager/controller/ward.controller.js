@@ -1,4 +1,5 @@
 const Wardmodel = require("../models/ward.model.js");
+const jwt = require('jsonwebtoken');
 
 //Asign Ward bed against new patient if ward not exists else try creating ward 
 exports.assignWard=(req, res)=>{
@@ -152,7 +153,7 @@ exports.validateToken= (req, res)=> {
           return false;
       }
       const user = jwt.verify(token, secretKey);
-      if(  user && user.designation =="doctor" && user.designation =="nurse"&& user.designation =="paramedic"){
+      if(  user && (user.designation =="nurse" || user.designation =="doctor" || user.designation =="paramedic")){
           return true;
       }else {
           // Access Denied
