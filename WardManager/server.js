@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //For handing the routes with ward url
 app.use('/',wardroute);
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3002;
 const db = mongoose.connect()
 db.on('error', console.error.bind(console, 'Database connection error:'));
 db.once('open', function() {
