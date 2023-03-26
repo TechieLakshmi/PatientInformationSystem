@@ -13,4 +13,4 @@ app.use(express.json())
 
 const clinicRouter = require('./routes/api')
 app.use('/api',clinicRouter)
-app.listen(3000, ()=> console.log('Server Started'))
+app.listen(3001, ()=> console.log('Server Started'))
