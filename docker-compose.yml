@@ -1,0 +1,17 @@
+version: '2.15.1'
+services:
+  authentication:
+    hostname: 'User Authentication Microservice'
+    build: './Authetication'
+    ports:
+      - "3001:3001"
+  patientregistration:
+    hostname: 'Patient Registartion Microservice'
+    build: './PatientRegistration'
+    ports:
+      - "6000:6000"
+  wardmanager:
+    hostname: 'Ward Admission Microservice'
+    build: './WardManager'
+    ports:
+      - "3002:3002"
