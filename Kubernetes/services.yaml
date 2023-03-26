@@ -1,0 +1,82 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: authentication
+  labels:
+    app.kubernetes.io/name: Authentication
+    app.kubernetes.io/component: Authentication
+  ports:
+    - port: 3001
+  selector:
+    app.kubernetes.io/name: Authentication
+    app.kubernetes.io/component: Authentication
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: patients
+  labels:
+    app.kubernetes.io/name: Patients
+    app.kubernetes.io/component: Patients
+  ports:
+    - port: 6000
+  selector:
+    app.kubernetes.io/name: Patients
+    app.kubernetes.io/component: Patients
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wardmanager
+  labels:
+    app.kubernetes.io/name: Wardmanager
+    app.kubernetes.io/component: Wardmanager
+  ports:
+    - port: 3002
+  selector:
+    app.kubernetes.io/name: Wardmanager
+    app.kubernetes.io/component: Wardmanager
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: telegraf
+  labels:
+    app.kubernetes.io/name: Patients
+    app.kubernetes.io/component: Patients
+  ports:
+    - port: 8125
+  selector:
+    app.kubernetes.io/name: Patients
+    app.kubernetes.io/component: Patients
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: influxdb
+  labels:
+    app.kubernetes.io/name: Patients
+    app.kubernetes.io/component: Patients
+  ports:
+    - port: 8086
+  selector:
+    app.kubernetes.io/name: Patients
+    app.kubernetes.io/component: Patients
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  labels:
+    app.kubernetes.io/name: Patients
+    app.kubernetes.io/component: Patients
+  ports:
+    - port: 3000
+  selector:
+    app.kubernetes.io/name: Patients
+    app.kubernetes.io/component: Patients
