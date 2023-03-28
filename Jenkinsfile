@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages{
-    stage('Security testing Using SonarQube'){
+    stage('Security testing - SonarQube'){
                 steps{
                     dir('PatientRegistration'){
                     nodejs(nodeJSInstallationName:'nodejs'){
