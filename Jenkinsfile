@@ -1,6 +1,21 @@
 pipeline {
     agent any
-    stages {
+    stages{
+    stage('Security testing Using SonarQube'){
+                steps{
+                    dir('PatientRegistration'){
+                    nodejs(nodeJSInstallationName:'nodejs'){
+                        bat "npm install"
+                        withSonarQubeEnv("sonar"){
+                        bat "npm install sonar-scanner"
+                        bat "npm run sonar"
+                        }
+                    }
+                }
+            }
+            }
+       
+    
         stage ('Containers starting') {
             steps {
                 echo 'Spinning up the containers'
@@ -46,6 +61,8 @@ pipeline {
                    dir('PatientRegistration') {
                                 script {
                                 echo 'PIS Testing with Chai/Mocha'
+                                bat "npm install --save-dev mocha chai"
+                                bat "npm run test"
                                 // bat 'npm test'
                                     }
                                 }
@@ -95,3 +112,4 @@ pipeline {
             }
         }
 }
+ 
