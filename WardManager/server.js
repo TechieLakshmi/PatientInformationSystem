@@ -2,6 +2,7 @@ const wardroute = require("./routes/ward.routes");
 const mongoose = require('./utils/database.js')
 const express = require("express");
 const app = express();
+// demo
 
 // parse requests of content-type - application/json
 app.use(express.json());
